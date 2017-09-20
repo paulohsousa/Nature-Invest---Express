@@ -9,9 +9,15 @@ angular.module('primeiraApp').config([
     }).state('billingCycle', {
       url: "/billingCycles?page",
       templateUrl: "billingCycle/tabs.html"
+    }).state('lista_de_campanhas', {
+        url: "/listaCampanhas",
+        templateUrl: "campanha/listaCampanhas.html"
+    }).state('principal', {
+        url: "/principal",
+        templateUrl: "home/index.html"
     })
       $httpProvider.interceptors.push('handleResponseError')
-    //$urlRouterProvider.otherwise('/dashboard')
+    $urlRouterProvider.otherwise('/principal')
 }])
 
 
@@ -42,7 +48,7 @@ angular.module('primeiraApp').config([
                         } else {
                             user.isValid = true
                             $http.defaults.headers.common.Authorization = user.token
-                            isAuthPage ? $window.location.href = '/' : $location.path('/dashboard')
+                            isAuthPage ? $window.location.href = '/' : $location.path('/principal')
                         }
                     })
 

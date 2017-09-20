@@ -10,12 +10,26 @@ angular.module('primeiraApp').controller('AuthCtrl', [
 function AuthController($location, msgs, auth) {
     const vm = this
 
-    vm.loginMode = true
+    vm.loginMode = ""
 
-    vm.changeMode = () => vm.loginMode = !vm.loginMode
+    vm.changeMode = () => {
+        if(auth.loginMode){
+             vm.loginMode = false
+        }else {
+            vm.loginMode = true
+        }
+    }
 
     vm.login = () => {
-        auth.login(vm.user, err => err ? msgs.addError(err) : $location.path('/'))
+        auth.login(vm.user, (err) =>{
+            if (err){
+                msgs.addError(err)
+            }else{
+                $location.path('/')
+                vm.changeMode()
+            }
+        })
+
     }
 
     vm.signup = () => {
@@ -26,6 +40,12 @@ function AuthController($location, msgs, auth) {
     vm.getUser = () => auth.getUser()
 
     vm.logout = () => {
-        auth.logout(() => $location.path('/'))
+        auth.logout(() =>{
+            $location.path('/')
+            vm.changeMode()
+        })
+
     }
+
+    vm.changeMode()
 }

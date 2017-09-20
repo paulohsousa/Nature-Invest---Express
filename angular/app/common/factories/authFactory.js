@@ -59,6 +59,8 @@
             }
         }
 
-        return { signup, login, logout, getUser, validateToken}
+        var loginMode = false
+
+        return { signup, login, logout, getUser, validateToken, loginMode}
     }
 })()

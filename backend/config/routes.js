@@ -11,6 +11,8 @@ module.exports = function (server) {
     openApi.post('/login', AuthService.login)
     openApi.post('/signup', AuthService.signup)
     openApi.post('/validateToken', AuthService.validateToken)
+    const Categorias = require('../api/categoriasCampanha/categoriasCampanhaService')
+    openApi.get('/getCategorias', Categorias.getCategorias)
   /*
      * Rotas protegidas por Token JWT
   */

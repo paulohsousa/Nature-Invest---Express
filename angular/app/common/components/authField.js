@@ -18,11 +18,10 @@ angular.module('primeiraApp').component('authField', {
         }
     },
     template: `
-  <div class="form-group has-feedback">
+  <div class="form-group">
   <input ng-model="$ctrl.model" id="{{ $ctrl.id }}" class="formcontrol"
   type="{{ $ctrl.type }}" placeholder="{{ $ctrl.placeholder }}"
   ng-hide="$ctrl.hide" />
-  <span class="{{ $ctrl.iconClasses }}"></span>
   </div>
   `
 })
