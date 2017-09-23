@@ -1,0 +1,103 @@
+<div class="row" ng-controller="campanhaCtrl as ctrl">
+    <div class="col-6">
+        <form>
+
+            <div class="form-group">
+                <label for="InputTitulo" class="col-form-label">Titulo</label>
+                <input type="text" ng-model="ctrl.campanha.titulo" class="form-control" id="InputTitulo" placeholder="Titulo do Projeto">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="InputOrcamento" class="col-form-label">Orcamento</label>
+                    <input type="text" ng-model="ctrl.campanha.orcamento" class="form-control" id="InputOrcamento" placeholder="20000.00">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="FormControlSelect" class="col-form-label">Moeda:</label>
+                    <select ng-model="ctrl.campanha.moeda" class="form-control" id="FormControlSelect">
+                        <option selected="selected">BRL</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress" class="col-form-label">Endereço</label>
+                <input type="text" ng-model="ctrl.campanha.endereco" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputEstado" class="col-form-label">Estado</label>
+                    <select id="inputEstado" ng-model="ctrl.campanha.estado" class="form-control">
+                        <option selected="selected">Brasília</option>
+                        <option>São Paulo</option>
+                        <option>Rio de Janeiro</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputCep" class="col-form-label">Cep</label>
+                    <input type="text" ng-model="ctrl.campanha.cep" class="form-control" placeholder="724567-765" id="inputCep">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputTelefone" class="col-form-label">Telefone</label>
+                    <input type="text" ng-model="ctrl.campanha.telefone" class="form-control" id="inputTelefone">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Date Inicial:</label>
+
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right" id="datepicker1">
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="form-group">
+                        <label>Date Final:</label>
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicke2">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $('#datepicker1').datepicker({
+                        autoclose: true
+                    });
+                    $('#datepicke2').datepicker({
+                        autoclose: true
+                    });
+                </script>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="FormControlTextareaCodeYoutube">Codigo video Youtube</label>
+                    <textarea class="form-control" id="FormControlTextareaCodeYoutube" placeholder="<iframe width='640 height='360 src=https://www.youtube.com/embed/p_c0kNKy3C4' frameborder='0' allowfullscreen></iframe>" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="FormControlTextareaDescricaoProjeto">Descrição do Projeto</label>
+                    <textarea class="form-control" id="FormControlTextareaDescricaoProjeto" rows="15"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <div class="col-6">col-6</div>
+</div>
