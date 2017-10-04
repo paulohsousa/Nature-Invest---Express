@@ -11,8 +11,10 @@ module.exports = function (server) {
     openApi.post('/login', AuthService.login)
     openApi.post('/signup', AuthService.signup)
     openApi.post('/validateToken', AuthService.validateToken)
-    const Categorias = require('../api/categoriasCampanha/categoriasCampanhaService')
+    const Categorias = require('../api/categoriasCampanha/getsCategoriasService')
     openApi.get('/getCategorias', Categorias.getCategorias)
+    const campanhaGetService = require('../api/campanha/getsCampanhasService')
+    openApi.get('/getCampanhas', campanhaGetService.getCampanhas)
   /*
      * Rotas protegidas por Token JWT
   */
@@ -28,4 +30,7 @@ module.exports = function (server) {
     const billingSummaryService =
         require('../api/billingSummary/billingSummaryService')
     protectedApi.route('/billingSummary').get(billingSummaryService.getSummary)
+
+    const campanhaService = require('../api/campanha/campanhaService')
+    campanhaService.register(protectedApi, '/campanha')
 }
