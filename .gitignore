@@ -1,0 +1,4 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+angular/node_modules/
+backend/node_modules/
